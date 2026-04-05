@@ -1,11 +1,10 @@
+#include <string>
+
 #ifndef TEXTURE_H
 #define TEXTURE_H
-
-
-class Texture
+struct Texture
 {
-
-
-
+    unsigned int id;
+    std::string type;
 };
 #endif

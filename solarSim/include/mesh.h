@@ -6,6 +6,10 @@
  * Element Buffer Objects
  * Vertices, Matrices, and other geometric data
  *********************************/
+#include "vertex.h"
+#include "texture.h"
+#include "shader.h"
+#include "glad/glad.h"
 #include <glm/glm.hpp>
 
 #ifndef MESH_H
@@ -15,26 +19,21 @@ class Mesh
 {
 public:
     // Constructors
-    
+    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indicies, std::vector<Texture> textures);
 
     // Destructor
     ~Mesh();
 
-    // VBO
+    // Draw
+    void draw(Shader &shader);
 
-
-    // VAO 
-
-
-    // EBO
-
-
+    // Member Variables
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
+    std::vector<Texture> textures;
 
 private:
-    unsigned int VBO, VAO, EBO;
-    float vertices        {};
-    unsigned int indicies {};
-    glm::vec3 cubePositions   {};
-
+    unsigned int VAO, VBO, EBO;
+    void setupMesh(); 
 };
 #endif
