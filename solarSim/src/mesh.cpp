@@ -1,6 +1,5 @@
 #include "mesh.h"
 
-
 /*********************************
  * CONSTRUCTOR
  *********************************/
@@ -62,5 +61,5 @@ void Mesh::setupMesh()
  *********************************/
 void Mesh::draw(Shader &shader)
 {
-    
+
 }

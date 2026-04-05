@@ -73,6 +73,45 @@ int main()
     }
 
 
+    //--------------------------------------------------------
+
+    // Create a set of vertices for the sun object
+    float sun[] = {
+        // positions
+        -0.33f,   0.33f, 0.0f,  // top-left
+         0.33f,   0.33f, 0.0f,  // top-right
+         0.33f,  -0.33f, 0.0f,  // bottom-right
+        -0.33f,  -0.33f, 0.0f   // bottom-left
+    };
+    // Indices for sun object
+    unsigned int sunIndices[] = {
+        0, 1, 3,
+        1, 2, 3
+    };
+
+
+
+    // Textures
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Main Render Loop
     while (!glfwWindowShouldClose(window))
     {
