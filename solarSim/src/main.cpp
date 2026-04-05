@@ -84,10 +84,10 @@ int main()
     // Create a set of vertices for the sun object
     float sun[] = {
     // positions          // tex coords
-    -0.33f,  0.33f, 0.0f,  0.0f, 1.0f,  // top-left
-     0.33f,  0.33f, 0.0f,  1.0f, 1.0f,  // top-right
-     0.33f, -0.33f, 0.0f,  1.0f, 0.0f,  // bottom-right
-    -0.33f, -0.33f, 0.0f,  0.0f, 0.0f   // bottom-left
+    -0.22f,  0.22f, 0.0f,  0.0f, 1.0f,  // top-left
+     0.22f,  0.22f, 0.0f,  1.0f, 1.0f,  // top-right
+     0.22f, -0.22f, 0.0f,  1.0f, 0.0f,  // bottom-right
+    -0.22f, -0.22f, 0.0f,  0.0f, 0.0f   // bottom-left
     };
     // Indices for sun object
     unsigned int sunIndices[] = {
