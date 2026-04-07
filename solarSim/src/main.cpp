@@ -84,10 +84,10 @@ int main()
     // Create a set of vertices for the sun object
     float sun[] = {
     // positions          // tex coords
-    -0.22f,  0.22f, 0.0f,  0.0f, 1.0f,  // top-left
-     0.22f,  0.22f, 0.0f,  1.0f, 1.0f,  // top-right
-     0.22f, -0.22f, 0.0f,  1.0f, 0.0f,  // bottom-right
-    -0.22f, -0.22f, 0.0f,  0.0f, 0.0f   // bottom-left
+    -0.10f,  0.10f, 0.0f,  0.0f, 1.0f,  // top-left
+     0.10f,  0.10f, 0.0f,  1.0f, 1.0f,  // top-right
+     0.10f, -0.10f, 0.0f,  1.0f, 0.0f,  // bottom-right
+    -0.10f, -0.10f, 0.0f,  0.0f, 0.0f   // bottom-left
     };
     // Indices for sun object
     unsigned int sunIndices[] = {
@@ -138,7 +138,7 @@ int main()
     // Load image, create texture, generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load("solarSim/res/shaders/textures/sun.png", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("solarSim/res/shaders/textures/sun2.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -156,6 +156,10 @@ int main()
     shader.use();
     shader.setInt("sunTexture", 0);
     
+
+    // Blend transparent pixels with background
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Main Render Loop
     while (!glfwWindowShouldClose(window))
