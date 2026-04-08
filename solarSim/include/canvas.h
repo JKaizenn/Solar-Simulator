@@ -13,8 +13,6 @@ public:
     ~Canvas();
 
 
-
-
     // Utility Drawing Methods
     void drawCircle();
 
