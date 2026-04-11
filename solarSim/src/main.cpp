@@ -81,7 +81,7 @@ int main()
     // Load shader
     Shader shader("solarSim/res/shaders/vertex.glsl", "solarSim/res/shaders/fragment.glsl");
 
-    // Create a set of vertices for the sun object
+    // Create a set of vertices for all planetary objects
     float sun[] = {
     // positions          // tex coords
     -0.10f,  0.10f, 0.0f,  0.0f, 1.0f,  // top-left
@@ -89,26 +89,37 @@ int main()
      0.10f, -0.10f, 0.0f,  1.0f, 0.0f,  // bottom-right
     -0.10f, -0.10f, 0.0f,  0.0f, 0.0f   // bottom-left
     };
-    // Indices for sun object
-    unsigned int sunIndices[] = {
-        0, 1, 3,
-        1, 2, 3
+
+    float mercury[] = {
+    0.150f,  0.030f, 0.0f,  0.0f, 1.0f,
+    0.210f,  0.030f, 0.0f,  1.0f, 1.0f,
+    0.210f, -0.030f, 0.0f,  1.0f, 0.0f,
+    0.150f, -0.030f, 0.0f,  0.0f, 0.0f
     };
 
+    // Indices for sun object
+    unsigned int planetIndices[] = {
+        0, 1, 3, // SUn
+        1, 2, 3
+    };
+/************************************************************* */
 
-    unsigned int VBO, VAO, EBO;
+    // Create separate VAO, VBO, and EBO for each planet
+    unsigned int sunVBO, sunVAO, sunEBO;
+    unsigned int mercuryVAO, mercuryVBO, mercuryEBO;
 
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
+    // SUN
+    glGenVertexArrays(1, &sunVAO);
+    glGenBuffers(1, &sunVBO);
+    glGenBuffers(1, &sunEBO);
 
-    glBindVertexArray(VAO);
+    glBindVertexArray(sunVAO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, sunVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(sun), sun, GL_STATIC_DRAW);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(sunIndices), sunIndices, GL_STATIC_DRAW);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sunEBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(planetIndices), planetIndices, GL_STATIC_DRAW);
 
     // position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
@@ -117,6 +128,26 @@ int main()
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+
+    // MERCURY
+    glGenVertexArrays(1, &mercuryVAO);
+    glGenBuffers(1, &mercuryVBO);
+    glGenBuffers(1, &mercuryEBO);
+
+    glBindVertexArray(mercuryVAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, mercuryVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(mercury), mercury, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mercuryEBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(planetIndices), planetIndices, GL_STATIC_DRAW);
+
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    // texture coord attribute
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     // Textures
 
@@ -138,7 +169,7 @@ int main()
     // Load image, create texture, generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char *data = stbi_load("solarSim/res/shaders/textures/sun2.png", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("solarSim/res/shaders/textures/sun.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -150,11 +181,38 @@ int main()
     
     stbi_image_free(data);
 
+    // Mercury Texture    
+    unsigned int mercuryTexture;
+
+    // Sun Texture
+    glGenTextures(1, &mercuryTexture);
+    glBindTexture(GL_TEXTURE_2D, mercuryTexture);
+
+    // Set the texture wrapping/filtering options (on the currently bound texture object)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    // Set the texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    // Load image, create texture, generate mipmaps
+    unsigned char *data2 = stbi_load("solarSim/res/shaders/textures/Mercury.png", &width, &height, &nrChannels, 0);
+    if (data2)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data2);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+
+    else
+        std::cout << "Failed to load Mercury Texture!" << '\n';
+    
+    stbi_image_free(data2);
 
 
     // Tell opengl which texture unit each texture belongs to
     shader.use();
-    shader.setInt("sunTexture", 0);
+    shader.setInt("planetTexture", 0);
     
 
     // Blend transparent pixels with background
@@ -165,13 +223,18 @@ int main()
     while (!glfwWindowShouldClose(window))
     {
         // Render
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.034f, 0.030f, 0.050f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        glBindVertexArray(sunVAO);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, sunTexture);
-
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        glBindVertexArray(mercuryVAO);
+        glBindTexture(GL_TEXTURE_2D, mercuryTexture); // just rebind, still unit 0
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
 
         glfwSwapBuffers(window);
         glfwPollEvents();
