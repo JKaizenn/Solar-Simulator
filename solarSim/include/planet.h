@@ -1,28 +1,30 @@
+/*************************
+ * Header File: PLANET
+ * Author: Jessen
+ * Summary:
+ * The attributes of a planet 
+ *************************/
+
 #ifndef PLANET_H
 #define PLANET_H
+
+#include "postion.h"
 
 
 class Planet
 {
 public:
-    // Constructor
-    Planet(float)
-
-
-
-
-
-    unsigned int VAO, VBO, EBO;
-    unsigned int textureID;
-
-    // Orbit Attributes
-
-
 
 
 
 private:
 
-};
+    // Attributes of planet objects
+    float radius; // Size of planet
+    Position pos;
+    
 
+
+
+};
 #endif
