@@ -33,7 +33,8 @@ public:
     std::vector<Texture> textures;
 
 private:
-    unsigned int VAO, VBO, EBO;
+    // Rendering
+    GLuint VAO, VBO, EBO;  // Mesh Buffers
     void setupMesh(); 
 };
 #endif
