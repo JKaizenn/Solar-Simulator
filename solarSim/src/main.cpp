@@ -20,6 +20,9 @@
 // Camera
 #include "camera.h"
 
+// Planet
+#include "planet.h"
+
 // Debugging and Console Output
 #include <iostream>
 
@@ -38,6 +41,7 @@ float orbitSpeed  = 0.75f;
  *********************************/
 int main()
 {
+    Planet mercury();
     // Initialize GLFW and Handle Errors
     if (!glfwInit())
     {
