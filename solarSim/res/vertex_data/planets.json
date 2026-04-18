@@ -1,0 +1,17 @@
+[
+    {
+        "name": "sun",
+        "radius": 0.5,
+        "orbitRadius": 0.3,
+        "orbitSpeed": 1.0,
+        "texture": "res/textures/sun.png"
+    },
+
+    {
+        "name": "mercury",
+        "radius": 0.03,
+        "orbitRadius": 0.3,
+        "orbitSpeed": 1.0,
+        "texture": "res/textures/mercury.png"
+    }
+]
