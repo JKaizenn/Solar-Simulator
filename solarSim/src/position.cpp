@@ -4,43 +4,43 @@
  * Summary:
  * The position of a planet, star, or element on screen.
  *************************/
-#include "postion.h"
-#include "velocity.h"
-#include "acceleration.h"
+// #include "postion.h"
+// #include "velocity.h"
+// #include "acceleration.h"
 
 
-// Constructors
-Position::Position(double x, double y) : x(0.0), y(0.0)
-{
-    setMetersX(x);
-    setMetersY(y);
-}
+// // Constructors
+// Position::Position(double x, double y) : x(0.0), y(0.0)
+// {
+//     setMetersX(x);
+//     setMetersY(y);
+// }
 
-// Assignment Operator
-Position& Position::operator = (const Position& pt)
-{
-    x = pt.x;
-    y = pt.y;
-    return *this;
-}
+// // Assignment Operator
+// Position& Position::operator = (const Position& pt)
+// {
+//     x = pt.x;
+//     y = pt.y;
+//     return *this;
+// }
 
-// Insertion / Extraction
+// // Insertion / Extraction
 
 
 
-/*************************
- * ADD
- * Update the current position based on velocity 
- *************************/
-void Position::add(const Acceleration& a, const Velocity& v, double t)
-{
-    // Use acceleration methods to get access to acceleration values
-    double ddx = a.getDDX();
-    double ddy = a.getDDY();
+// /*************************
+//  * ADD
+//  * Update the current position based on velocity 
+//  *************************/
+// void Position::add(const Acceleration& a, const Velocity& v, double t)
+// {
+//     // Use acceleration methods to get access to acceleration values
+//     double ddx = a.getDDX();
+//     double ddy = a.getDDY();
 
-    this->x += v.getDx() * t + 0.5 * ddx * t * t;
-    this->y += v.getDy() * t + 0.5 * ddy * t * t;
-}
+//     this->x += v.getDx() * t + 0.5 * ddx * t * t;
+//     this->y += v.getDy() * t + 0.5 * ddy * t * t;
+// }
 
 
 

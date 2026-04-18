@@ -28,6 +28,10 @@
 const unsigned int SCR_WIDTH  {800};
 const unsigned int SCR_HEIGHT {600};
 
+// Orbit Attributes
+float orbitRadius = 0.50f;
+float orbitSpeed  = 0.75f;
+
 
 /*********************************
  * MAIN
@@ -226,13 +230,21 @@ int main()
         glClearColor(0.034f, 0.030f, 0.050f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        shader.setMat4("transform", glm::mat4(1.0f));
         glBindVertexArray(sunVAO);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, sunTexture);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+
+        float angle = (float)glfwGetTime() * orbitSpeed;
+        glm::mat4 trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(orbitRadius * cos(angle), orbitRadius * sin(angle), 0.0f));
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+
         glBindVertexArray(mercuryVAO);
         glBindTexture(GL_TEXTURE_2D, mercuryTexture); // just rebind, still unit 0
+        shader.setMat4("transform", trans);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 

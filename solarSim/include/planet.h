@@ -8,7 +8,7 @@
 #ifndef PLANET_H
 #define PLANET_H
 
-#include "postion.h"
+#include "physics/position.h"
 #include "glad/glad.h"
 #include "glfw/glfw3.h"
 #include "glm/glm.hpp"
@@ -33,8 +33,8 @@ private:
     std::shared_ptr<Mesh> mesh;
 
     // Geometry and Transform
-    float radius;       // Size of planet
-    glm::vec2 position; // Where the planet/star sits in the scene
+    float radius;      // Size of planet
+    Position position; // Where the planet/star sits in the scene
     
     // Orbital Motion
     float orbitRadius; // Distance from the sun
