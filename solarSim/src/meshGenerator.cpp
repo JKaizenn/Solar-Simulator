@@ -5,7 +5,7 @@
  * GENERATE CIRCLE
  * Used a perimeter with a radius and segments to create a circle of vertices
  *********************************/
-std::shared_ptr<Mesh> MeshGenerator::generateCircle(float radius, int segments = 36)
+std::shared_ptr<Mesh> MeshGenerator::generateCircle(float radius, int segments)
 {
     // Create a set of vertices to store position, normal, and texture coordinates
     std::vector<Vertex> vertices;

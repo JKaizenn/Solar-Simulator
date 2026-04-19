@@ -9,10 +9,14 @@
 
 #include "planet.h"
 #include "meshGenerator.h"
+#include "texture.h"
+#include "textureLoader.h"
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <memory>
 #include <string>
+#include <vector>
+#include <glad/glad.h>
 
 
 class PlanetFactory

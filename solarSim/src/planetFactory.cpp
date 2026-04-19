@@ -13,6 +13,9 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
         float orbitRadius   = p["orbitRadius"];
         float orbitSpeed    = p["orbitSpeed"];
         float rotationSpeed = p["rotationSpeed"];
+        std::string texPath = p["texture"];
+
+        Texture texture = TextureLoader::load(texPath);
 
         std::shared_ptr<Mesh> mesh = MeshGenerator::generateCircle(radius);
 

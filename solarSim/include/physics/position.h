@@ -16,40 +16,40 @@ class Position
 {
 public:
     Position() : x(0.0), y(0.0) {}
-    Position(double x, double y);
+    Position(float x, float y);
     Position(const Position& pt) : x(pt.x), y(pt.y) {}
     Position& operator = (const Position& pt);
 
     // Getters
-    double getMetersX() const { return x; }
-    double getMetersY() const { return y; }    
-    double getPixelsX() const { return x / metersFromPixels; }
-    double getPixelsY() const { return y / metersFromPixels; }
+    float getMetersX() const { return x; }
+    float getMetersY() const { return y; }    
+    float getPixelsX() const { return x / metersFromPixels; }
+    float getPixelsY() const { return y / metersFromPixels; }
 
     // Setters
-    void setMeters(double xMeters, double yMeters) {x = xMeters; y = yMeters; }
-    void setMetersX(double xMeters) { x = xMeters; }
-    void setMetersY(double yMeters) { y = yMeters; }
-    void setPixelsX(double xPixels) { x = xPixels * metersFromPixels; }
-    void setPixelsY(double yPixels) { y = yPixels * metersFromPixels; }
+    void setMeters(float xMeters, float yMeters) {x = xMeters; y = yMeters; }
+    void setMetersX(float xMeters) { x = xMeters; }
+    void setMetersY(float yMeters) { y = yMeters; }
+    void setPixelsX(float xPixels) { x = xPixels * metersFromPixels; }
+    void setPixelsY(float yPixels) { y = yPixels * metersFromPixels; }
 
     // Add
-    void addMetersX(double dxMeters) {setMetersX(getMetersX() + dxMeters); }
-    void addMetersX(double dyMeters) {setMetersY(getMetersY() + dyMeters); }
-    void addPixelsX(double dxPixels) {setPixelsX(getPixelsX() + dxPixels); }
-    void addPixelsY(double dyPixels) {setPixelsY(getPixelsY() + dyPixels); }
-    void add(const Acceleration& a, const Velocity& v, double t);
+    void addMetersX(float dxMeters) {setMetersX(getMetersX() + dxMeters); }
+    void addMetersY(float dyMeters) {setMetersY(getMetersY() + dyMeters); }
+    void addPixelsX(float dxPixels) {setPixelsX(getPixelsX() + dxPixels); }
+    void addPixelsY(float dyPixels) {setPixelsY(getPixelsY() + dyPixels); }
+    void add(const Acceleration& a, const Velocity& v, float t);
 
     // Deal with ratio between pixels and meters
-    void setZoom(double metersFromPixels) { 
+    void setZoom(float metersFromPixels) { 
         this->metersFromPixels = metersFromPixels; }
 
-    double getZoom() const { return metersFromPixels; }
+    float getZoom() const { return metersFromPixels; }
 
 private:
-    double x; // horizontal position
-    double y; // vertical position
-    static double metersFromPixels;
+    float x; // horizontal position
+    float y; // vertical position
+    static float metersFromPixels;
 };
 
 #endif

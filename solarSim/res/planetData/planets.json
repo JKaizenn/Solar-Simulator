@@ -5,7 +5,7 @@
         "orbitRadius": 0.3,
         "orbitSpeed": 1.0,
         "rotationSpeed": 0.1,
-        "texture": "res/textures/sun.png"
+        "texture": "solarSim/res/textures/sun.png"
     },
 
     {
@@ -14,6 +14,6 @@
         "orbitRadius": 0.3,
         "orbitSpeed": 1.0,
         "rotationSpeed": 0.5,
-        "texture": "res/textures/mercury.png"
+        "texture": "solarSim/res/textures/mercury.png"
     }
 ]
