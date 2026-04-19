@@ -23,9 +23,9 @@ std::shared_ptr<Mesh> MeshGenerator::generateCircle(float radius, int segments)
     {
         float angle = (2.0f * M_PI * i) / segments;
         Vertex v;
-        v.Position  = { radius * cos(angle), radius * sin (angle), 0.0f };
+        v.Position  = { radius * cos(angle), radius * sin(angle), 0.0f };
         v.Normal    = { 0.0f, 0.0f, 0.0f };
-        v.TexCoords = { (cos(angle) + 1.0f) / 2.0f, sin(angle + 1.0f) / 2.0f};
+        v.TexCoords = { (cos(angle) + 1.0f) / 2.0f, (sin(angle) + 1.0f) / 2.0f};
         vertices.push_back(v); 
     }
 
@@ -36,7 +36,7 @@ std::shared_ptr<Mesh> MeshGenerator::generateCircle(float radius, int segments)
         indices.push_back(i);
         indices.push_back(i + 1);
     }
-    
+
     return std::make_shared<Mesh>(vertices, indices, std::vector<Texture>{});
 
 }

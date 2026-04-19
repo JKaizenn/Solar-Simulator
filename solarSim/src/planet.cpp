@@ -16,6 +16,7 @@ Planet::~Planet() { }
 
 void Planet::draw(Shader& shader)
 {
+    shader.use();
     orbitAngle = (float)glfwGetTime() * orbitSpeed;
 
     glm::mat4 trans = glm::mat4(1.0f);
