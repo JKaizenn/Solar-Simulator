@@ -14,7 +14,7 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
     }
     std::cout << "Opened: " << path << '\n';
 
-    std::cout << "Loaded: " << planets.size() << " planets" << '\n';
+
     for (auto& p : planets)
         std::cout << "Planets Created: " << '\n';
 
@@ -41,6 +41,7 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
             rotationSpeed
         ));
     }
+    std::cout << "Loaded: " << planets.size() << " planets" << '\n';
 
     return planets;
 }
