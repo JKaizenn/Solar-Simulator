@@ -30,6 +30,8 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
 
         std::shared_ptr<Mesh> mesh = MeshGenerator::generateCircle(radius);
 
+        mesh->textures.push_back(texture);
+        
         planets.push_back(std::make_shared<Planet>(
             mesh,
             glm::vec2(0.0f, 0.0f),
@@ -39,5 +41,6 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
             rotationSpeed
         ));
     }
+
     return planets;
 }

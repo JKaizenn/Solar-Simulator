@@ -1,19 +1,35 @@
 [
     {
         "name": "sun",
-        "radius": 0.5,
-        "orbitRadius": 0.3,
-        "orbitSpeed": 1.0,
-        "rotationSpeed": 0.1,
+        "radius": 0.3,
+        "orbitRadius": 0.0,
+        "orbitSpeed": 0.0,
+        "rotationSpeed": 1.0,
         "texture": "solarSim/res/textures/sun.png"
     },
 
     {
         "name": "mercury",
-        "radius": 0.03,
-        "orbitRadius": 0.3,
+        "radius": 0.05,
+        "orbitRadius": 0.5,
         "orbitSpeed": 1.0,
         "rotationSpeed": 0.5,
         "texture": "solarSim/res/textures/mercury.png"
+    },
+    {   
+        "name": "venus",
+        "radius": 0.04,
+        "orbitRadius": 0.75,
+        "orbitSpeed": 1.0,
+        "rotationSpeed": 0.5,
+        "texture": "solarSim/res/textures/venus.png"    
+    },
+    {   
+        "name": "earth",
+        "radius": 0.03,
+        "orbitRadius": 0.90,
+        "orbitSpeed": 1.0,
+        "rotationSpeed": 1.5,
+        "texture": "solarSim/res/textures/earth.png"    
     }
 ]
