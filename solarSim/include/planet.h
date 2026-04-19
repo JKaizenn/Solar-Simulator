@@ -19,10 +19,9 @@
 class Planet
 {
 public:
-    // Constructors
-    Planet(std::shared_ptr<Mesh> mesh, glm::vec2 position, float radius);
+    // Constructor
     Planet(std::shared_ptr<Mesh> mesh, glm::vec2 position, float radius,
-       float orbitRadius, float orbitSpeed, float rotationSpeed);
+       float orbitRadius = 0.0f, float orbitSpeed = 0.0f, float rotationSpeed = 0.0f);
 
     // Destructor
     ~Planet();

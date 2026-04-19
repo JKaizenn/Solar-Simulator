@@ -21,7 +21,7 @@
 #include "camera.h"
 
 // Planet
-#include "planet.h"
+#include "planetFactory.h"
 
 // Debugging and Console Output
 #include <iostream>
@@ -41,8 +41,7 @@ float orbitSpeed  = 0.75f;
  *********************************/
 int main()
 {
-    Planet mercury();
-    // Initialize GLFW and Handle Errors
+    auto planets = PlanetFactory::createAll("res/vertex_data/planets.json");
     if (!glfwInit())
     {
         std::cout << "GLFW Failed to Initialize!" << '\n';

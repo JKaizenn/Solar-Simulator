@@ -6,14 +6,14 @@
  * Element Buffer Objects
  * Vertices, Matrices, and other geometric data
  *********************************/
+#ifndef MESH_H
+#define MESH_H
+
 #include "vertex.h"
 #include "texture.h"
 #include "shader.h"
 #include "glad/glad.h"
 #include <glm/glm.hpp>
-
-#ifndef MESH_H
-#define MESH_H
 
 class Mesh
 {
