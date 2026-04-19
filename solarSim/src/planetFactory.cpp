@@ -5,8 +5,19 @@ std::vector<std::shared_ptr<Planet>> PlanetFactory::createAll(const std::string&
     // Load data from JSON
     std::ifstream file(path);
     nlohmann::json data = nlohmann::json::parse(file);
-
     std::vector<std::shared_ptr<Planet>> planets;
+
+    if(!file.is_open())
+    {
+        std::cout << "Failed to open: " << path << '\n';
+        return planets;
+    }
+    std::cout << "Opened: " << path << '\n';
+
+    std::cout << "Loaded: " << planets.size() << " planets" << '\n';
+    for (auto& p : planets)
+        std::cout << "Planets Created: " << '\n';
+
     for (auto& p : data)
     {
         float radius        = p["radius"];

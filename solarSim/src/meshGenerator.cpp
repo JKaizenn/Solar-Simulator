@@ -36,7 +36,7 @@ std::shared_ptr<Mesh> MeshGenerator::generateCircle(float radius, int segments)
         indices.push_back(i);
         indices.push_back(i + 1);
     }
-
+    
     return std::make_shared<Mesh>(vertices, indices, std::vector<Texture>{});
 
 }
