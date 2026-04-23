@@ -11,25 +11,57 @@
     {
         "name": "mercury",
         "radius": 0.05,
-        "orbitRadius": 0.5,
-        "orbitSpeed": 1.0,
+        "orbitRadius": 0.4,
+        "orbitSpeed": 0.50,
         "rotationSpeed": 0.5,
         "texture": "solarSim/res/textures/mercury.png"
     },
     {   
         "name": "venus",
         "radius": 0.04,
-        "orbitRadius": 0.75,
-        "orbitSpeed": 1.0,
+        "orbitRadius": 0.5,
+        "orbitSpeed": 0.30,
         "rotationSpeed": 0.5,
         "texture": "solarSim/res/textures/venus.png"    
     },
     {   
         "name": "earth",
         "radius": 0.03,
-        "orbitRadius": 0.90,
-        "orbitSpeed": 1.0,
+        "orbitRadius": 0.6,
+        "orbitSpeed": 0.25,
         "rotationSpeed": 1.5,
         "texture": "solarSim/res/textures/earth.png"    
+    },
+    {   
+        "name": "mars",
+        "radius": 0.09,
+        "orbitRadius": 0.7,
+        "orbitSpeed": 0.20,
+        "rotationSpeed": 1.5,
+        "texture": "solarSim/res/textures/Mars.png"    
+    },
+        {   
+        "name": "saturn",
+        "radius": 0.09,
+        "orbitRadius": 0.8,
+        "orbitSpeed": 0.15,
+        "rotationSpeed": 1.5,
+        "texture": "solarSim/res/textures/saturn.png"    
+    },
+        {   
+        "name": "uranus",
+        "radius": 0.09,
+        "orbitRadius": 0.9,
+        "orbitSpeed": 0.10,
+        "rotationSpeed": 1.5,
+        "texture": "solarSim/res/textures/Uranus.png"    
+    },
+        {   
+        "name": "Neptune",
+        "radius": 0.09,
+        "orbitRadius": 1.0,
+        "orbitSpeed": 0.05,
+        "rotationSpeed": 1.5,
+        "texture": "solarSim/res/textures/Neptune.png"    
     }
 ]
