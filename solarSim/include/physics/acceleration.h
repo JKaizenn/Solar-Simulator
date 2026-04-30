@@ -1,8 +1,7 @@
 /*************************
  * Header File: ACCELERATION
  * Author: Jessen
- * Summary:
- * The acceleration attribute of a planet, star, or element on screen.
+ * Summary: The acceleration attribute of a planet, star, or element on screen.
  *************************/
 #ifndef ACCELERATION_H
 #define ACCELERATION_H

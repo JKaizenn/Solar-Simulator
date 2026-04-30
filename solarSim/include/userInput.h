@@ -16,7 +16,6 @@ public:
     void mouseCallback(GLFWwindow* window, double xPos, double yPos);
     void scrollCallback(GLFWwindow* window, double xOffset, double yOffset);
 
-
 private:
     bool firstMouse {true};
 

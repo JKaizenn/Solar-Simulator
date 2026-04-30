@@ -18,16 +18,13 @@
 #include <vector>
 #include <glad/glad.h>
 
-
 class PlanetFactory
 {
 public:
     // Create planet with json file data
     static std::vector<std::shared_ptr<Planet>> createAll(const std::string& path);
 
-
 private:
-
 
 };
 #endif

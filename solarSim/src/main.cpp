@@ -15,7 +15,7 @@
 #include "shader.h"
 
 // Camera
-#include "camera.h"
+// #include "camera.h"
 
 // Planet
 #include "planetFactory.h"
@@ -27,11 +27,6 @@
 // Screen Dimensions
 const unsigned int SCR_WIDTH  {800};
 const unsigned int SCR_HEIGHT {600};
-
-// Orbit Attributes
-float orbitRadius = 0.50f;
-float orbitSpeed  = 0.75f;
-
 
 /*********************************
  * MAIN

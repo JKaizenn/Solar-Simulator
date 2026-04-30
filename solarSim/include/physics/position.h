@@ -1,8 +1,7 @@
 /*************************
  * Header File: POSITION
  * Author: Jessen
- * Summary:
- * The position of a planet, star, or element on screen.
+ * Summary: The position of a planet, star, or element on screen.
  *************************/
 #ifndef POSITION_H
 #define POSITION_H
@@ -51,5 +50,4 @@ private:
     float y; // vertical position
     static float metersFromPixels;
 };
-
 #endif

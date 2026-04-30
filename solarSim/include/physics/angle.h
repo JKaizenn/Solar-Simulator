@@ -1,8 +1,7 @@
 /*************************
  * Header File: ANGLE
  * Author: Jessen
- * Summary:
- * The angle of a planet, star, or element on screen.
+ * Summary: The angle of a planet, star, or element on screen.
  *************************/
 #include <cmath>
 

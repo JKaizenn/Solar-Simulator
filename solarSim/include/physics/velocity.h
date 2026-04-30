@@ -1,8 +1,7 @@
 /*************************
  * Header File: VELOCITY
  * Author: Jessen
- * Summary:
- * The velocity of an object on screen such as a planet, star, satellite, etc.
+ * Summary: The velocity of an object on screen such as a planet, star, satellite, etc.
  *************************/
 #ifndef VELOCITY_H
 #define VELOCITY_H

@@ -12,21 +12,13 @@
 #include <memory>
 #include <cmath>
 
-
 class MeshGenerator
 {
 public:
     // Generate Mesh
     static std::shared_ptr<Mesh> generateCircle(float radius, int segments = 36);
 
-
-
-
 private:
 
-
 };
-
-
-
 #endif

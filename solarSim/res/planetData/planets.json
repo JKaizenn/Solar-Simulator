@@ -57,7 +57,7 @@
         "texture": "solarSim/res/textures/Uranus.png"    
     },
         {   
-        "name": "Neptune",
+        "name": "neptune",
         "radius": 0.09,
         "orbitRadius": 1.0,
         "orbitSpeed": 0.05,
