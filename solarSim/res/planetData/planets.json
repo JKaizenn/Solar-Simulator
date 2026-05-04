@@ -11,7 +11,7 @@
     {
         "name": "mercury",
         "radius": 0.05,
-        "orbitRadius": 0.4,
+        "orbitRadius": 0.3,
         "orbitSpeed": 0.50,
         "rotationSpeed": 0.5,
         "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Mercury.png"
@@ -19,26 +19,34 @@
     {   
         "name": "venus",
         "radius": 0.04,
-        "orbitRadius": 0.5,
-        "orbitSpeed": 0.30,
+        "orbitRadius": 0.4,
+        "orbitSpeed": 0.35,
         "rotationSpeed": 0.5,
         "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Venus.png"    
     },
     {   
         "name": "earth",
         "radius": 0.03,
-        "orbitRadius": 0.6,
-        "orbitSpeed": 0.25,
+        "orbitRadius": 0.5,
+        "orbitSpeed": 0.30,
         "rotationSpeed": 1.5,
         "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Earth.png"    
     },
     {   
         "name": "mars",
         "radius": 0.09,
+        "orbitRadius": 0.6,
+        "orbitSpeed": 0.25,
+        "rotationSpeed": 1.5,
+        "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Mars.png"    
+    },
+        {   
+        "name": "jupiter",
+        "radius": 0.09,
         "orbitRadius": 0.7,
         "orbitSpeed": 0.20,
         "rotationSpeed": 1.5,
-        "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Mars.png"    
+        "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Jupiter.png"    
     },
         {   
         "name": "saturn",
