@@ -25,8 +25,8 @@
 
 // GLOBALS
 // Screen Dimensions
-const unsigned int SCR_WIDTH  {680};
-const unsigned int SCR_HEIGHT {340};
+const unsigned int SCR_WIDTH  {800};
+const unsigned int SCR_HEIGHT {600};
 
 /*********************************
  * MAIN
