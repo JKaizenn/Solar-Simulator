@@ -1,5 +1,7 @@
 /*********************************
- * MESH
+ * Header File: MESH
+ * Author: Jessen 
+ * Summary:
  * Everything we need to know about:
  * Vertex Buffer Objects
  * Vertex Array Objects
