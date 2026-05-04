@@ -18,12 +18,26 @@ IMGUI_SRCS = $(ROOT)/vendor/imgui/imgui.cpp \
              $(ROOT)/vendor/imgui/backends/imgui_impl_opengl3.cpp
 IMGUI_OBJS = $(IMGUI_SRCS:$(ROOT)/vendor/imgui/%.cpp=bin/imgui/%.o)
 
-LIBS = -L$(ROOT)/vendor/glfw/lib \
-       -lglfw3 \
-       -framework OpenGL \
-       -framework Cocoa \
-       -framework IOKit \
-       -framework CoreVideo
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Darwin)
+    LIBS = -L$(ROOT)/vendor/glfw/lib \
+           -lglfw3 \
+           -framework OpenGL \
+           -framework Cocoa \
+           -framework IOKit \
+           -framework CoreVideo
+else
+    LIBS = -lglfw \
+           -lGL \
+           -ldl \
+           -lpthread \
+           -lX11 \
+           -lXrandr \
+           -lXi \
+           -lXinerama \
+           -lXcursor
+endif
 
 bin/main: $(OBJS) $(GLAD_OBJ) $(IMGUI_OBJS)
 	$(CXX) $(CXXFLAGS) $^ $(LIBS) -o $@

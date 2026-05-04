@@ -39,7 +39,7 @@ int main()
         glfwTerminate();
         return -1;
     }
-
+    
     // Initialize GLFW Window Hints
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -47,7 +47,7 @@ int main()
 
     // GLFW Window Hint for Apple Devices
     #ifndef __APPLE__
-        glfwWindowHint(GLFW_OPEN_GL_FORWARD_COMPAT, GL_TRUE);
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
 
 

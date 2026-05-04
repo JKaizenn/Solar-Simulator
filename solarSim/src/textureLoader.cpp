@@ -26,8 +26,10 @@ Texture TextureLoader::load(const std::string& path)
 
         if(imgData)
         {
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, imgData);
+            GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
+            glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, imgData);
             glGenerateMipmap(GL_TEXTURE_2D);
+            std::cout << "Loaded: " << path << " | W:" << width << " H:" << height << " CH:" << nrChannels << '\n';
         }
 
         else

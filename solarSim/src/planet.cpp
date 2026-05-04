@@ -27,5 +27,7 @@ void Planet::draw(Shader& shader)
     ));
 
     shader.setMat4("transform", trans);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, mesh->textures[0].id);
     mesh->draw(shader);
 }
