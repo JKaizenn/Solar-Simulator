@@ -5,7 +5,7 @@
         "orbitRadius": 0.0,
         "orbitSpeed": 0.0,
         "rotationSpeed": 1.0,
-        "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/sun.png"
+        "texture": "/home/kaizen/Dev/CPP/Solar-Simulator/solarSim/res/textures/Sun.png"
     },
 
     {
