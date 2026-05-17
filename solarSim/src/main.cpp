@@ -14,8 +14,9 @@
 // Shader
 #include "shader.h"
 
-// Camera
-// #include "camera.h"
+// Camera and User Input
+#include "camera2D.h"
+#include "userInput.h"
 
 // Planet
 #include "planetFactory.h"
@@ -28,11 +29,16 @@
 const unsigned int SCR_WIDTH  {800};
 const unsigned int SCR_HEIGHT {600};
 
+UserInput* gInput = nullptr;
+
 /*********************************
  * MAIN
  *********************************/
 int main()
 {
+    Camera2D camera(glm::vec2(0.0, 0.0f), glm::vec2(0.0f, 0.0f));
+    UserInput input(camera);
+
     if (!glfwInit())
     {
         std::cout << "GLFW Failed to Initialize!" << '\n';
@@ -65,6 +71,19 @@ int main()
     // Configure Window Contexts
     glfwMakeContextCurrent(window);
 
+
+    // gInput = &input;
+
+    // glfwSetCursorPosCallback(window, [](GLFWwindow* window, double xPos, double yPos)
+    // {
+    //     gInput->mouseCallback(window, xPos, yPos);
+    // });
+
+    // glfwSetScrollCallback(window, [](GLFWwindow* window, double xOffset, double yOffset)
+    // {
+    //     gInput->scrollCallback(window, xOffset, yOffset);
+    // });
+    
 
     // Initialize GLAD
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

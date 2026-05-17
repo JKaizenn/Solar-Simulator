@@ -2,13 +2,12 @@
 #define USER_INPUT_H
 
 #include <glfw/glfw3.h>
-
-
+#include "camera2D.h"
 
 class UserInput
 {
 public:
-
+    UserInput(Camera2D& camera);
     // Keyboard Input
     void processInput(GLFWwindow* window);
 
@@ -18,6 +17,7 @@ public:
 
 private:
     bool firstMouse {true};
+    Camera2D& camera;
 
 };
 #endif

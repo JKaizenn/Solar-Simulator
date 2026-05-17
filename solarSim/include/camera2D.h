@@ -9,6 +9,7 @@
 
 #include "userInput.h"
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include <glad/glad.h>
 #include <vector>
 
@@ -26,10 +27,10 @@ public:
     Camera2D(glm::vec2 cameraPosition, glm::vec2 cameraOrigin) : cameraPosition(cameraPosition), cameraOrigin(cameraOrigin) { }
 
     // Setup Orthographic Projection
-    glm::mat4 getProjectionMatrix();
+    glm::mat4 getProjectionMatrix(unsigned int SCR_WIDTH, unsigned int SCR_HEIGHT);
 
-    // Create a transformation matrix to apply scale
-    void getTransformationMatrix();
+    // Setup View Matrix
+    glm::mat4 getViewMatrix();
 
     // Pan the Camera
     void pan(glm::vec2 delta);
